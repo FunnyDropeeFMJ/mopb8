@@ -40,6 +40,10 @@ AppAsset::register($this);
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'О компании', 'url' => ['/site/about']],
             ['label' => 'Услуги', 'url' => ['/site/contact']],
+            ['label' => 'Create Task', 'url' => ['/task/create']],
+            ['label' => 'My Tasks', 'url' => ['/task/my']],
+            ['label' => 'Shared Tasks', 'url' => ['/task/shared']],
+            ['label' => 'Accessed Tasks', 'url' => ['/task/accessed']],
             Yii::$app->user->isGuest ? 
                 ['label' => 'Вход', 'url' => ['/site/login']] :
                 [

@@ -50,8 +50,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         if($insert) {
             $this->auth_key = \Yii::$app->security->generateRandomString();
         }
-        if($this->password_hash) {
-            $this->password_hash = \Yii::$app->security->generatePasswordHash($this->password_hash);
+        if($this->password) {
+            $this->password_hash = \Yii::$app->security->generatePasswordHash($this->password);
         }
 
         return true;
@@ -78,7 +78,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'name','password_hash'], 'required'],
+            [['username', 'name'], 'required'],
             [['creator_id', 'updater_id', 'created_at', 'updated_at'], 'integer'],
             [['username', 'name', 'password', 'access_token', 'auth_key'], 'string', 'max' => 255],
         ];
