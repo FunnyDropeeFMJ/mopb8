@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\task */
+/* @var $model app\models\cartrige */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Cartriges', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="task-view">
+<div class="cartrige-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -25,18 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'title',
-            'id_name:ntext',
-            'creator_id',
-            'updater_id',
-            'created_at',
-            'updated_at',
+            'model_name',
         ],
     ]) ?>
 

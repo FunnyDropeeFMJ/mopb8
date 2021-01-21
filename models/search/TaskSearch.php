@@ -18,9 +18,10 @@ class taskSearch extends task
     {
         return [
             [['id', 'creator_id', 'updater_id', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'description'], 'safe'],
+            [['title', 'id_name'], 'safe'],
         ];
     }
+    
 
     /**
      * {@inheritdoc}
@@ -65,9 +66,12 @@ class taskSearch extends task
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'description', $this->description]);
+    
 
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'id_name', $this->id_name]);
+
+    
         return $dataProvider;
     }
 }

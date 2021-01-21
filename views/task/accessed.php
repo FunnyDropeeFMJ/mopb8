@@ -24,9 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'title',
-            'description:ntext',
             'creator.username',
+            'title',
+            ['attribute' => 'id_name',
+            'value' => function ($model) {
+                return $model->name->name;
+            },
+        ],
+           
             'created_at:datetime',
             [
                 'class' => 'yii\grid\ActionColumn',

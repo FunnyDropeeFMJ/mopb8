@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\task */
+/* @var $model app\models\storage */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Storages', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="task-view">
+<div class="storage-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -25,18 +25,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'title',
-            'id_name:ntext',
-            'creator_id',
-            'updater_id',
-            'created_at',
-            'updated_at',
+            'name',
+            'count',
         ],
     ]) ?>
 

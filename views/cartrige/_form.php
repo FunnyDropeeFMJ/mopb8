@@ -2,24 +2,17 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
-use app\models\Storage;
+
 /* @var $this yii\web\View */
-/* @var $model app\models\task */
+/* @var $model app\models\cartrige */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="task-form">
+<div class="cartrige-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'id_name')
-    ->dropDownList(ArrayHelper::map(Storage::find()->all(), 'id', 'name')
-    )
-    ?>
-    
+    <?= $form->field($model, 'model_name')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

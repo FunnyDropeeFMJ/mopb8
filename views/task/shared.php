@@ -24,8 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'title',
-            'description:ntext',
             [
                 'label' => 'users',
                 'value' => function(\app\models\Task $model) {
@@ -33,6 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     return join(', ' , $usernames);
                 }
             ],
+            'title',
+            ['attribute' => 'id_name',
+            'value' => function ($model) {
+                return $model->name->name;
+            },
+        ],
             'created_at:datetime',
 
             [

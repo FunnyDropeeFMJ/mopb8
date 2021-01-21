@@ -15,7 +15,7 @@ class m210115_064445_add_table_task extends Migration
         $this->createTable('task', [
             'id' => $this->primaryKey(),
             'title' => $this->string(255)->notNull(),
-            'description' => $this->text()->notNull(),
+            'id_name' => $this->integer(11),
             'creator_id' => $this->integer()->notNull(),
             'updater_id' => $this->integer(),
             'created_at' => $this->integer()->notNull(),

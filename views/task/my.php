@@ -25,7 +25,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             'title',
-            'description:ntext',
+            ['attribute' => 'id_name',
+            'value' => function ($model) {
+                return $model->name->name;
+            },
+             'filter' => yii\helpers\ArrayHelper::map(app\models\Storage::find()
+             ->orderBy('id')->asArray()
+             ->all(),'id','name')
+            ],
             'created_at:datetime',
 
             [

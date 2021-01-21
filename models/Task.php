@@ -11,7 +11,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property int $id
  * @property string $title
- * @property string $description
+ * @property string $id_name
  * @property int $creator_id
  * @property int $updater_id
  * @property int $created_at
@@ -57,8 +57,8 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description'], 'required'],
-            [['description'], 'string'],
+            [['title', 'id_name'], 'required'],
+            [['id_name'], 'string'],
             [['creator_id', 'updater_id', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['creator_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['creator_id' => 'id']],
@@ -74,7 +74,7 @@ class Task extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
-            'description' => 'Description',
+            'id_name' => 'id_name',
             'creator_id' => 'Creator ID',
             'updater_id' => 'Updater ID',
             'created_at' => 'Created At',
@@ -113,6 +113,11 @@ class Task extends \yii\db\ActiveRecord
     {
         return $this->hasMany(User::className(), ['id' => 'user_id'])
             ->via(self::RELATION_TASK_USERS);
+    }
+
+    public function getName()
+    {
+        return $this->hasOne(Storage::className(), ['id' => 'id_name']);
     }
 
     /**
