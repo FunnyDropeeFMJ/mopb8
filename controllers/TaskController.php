@@ -12,7 +12,7 @@ use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
+use app\models\user;
 /**
  * TaskController implements the CRUD actions for Task model.
  */
@@ -128,6 +128,8 @@ class TaskController extends Controller
             Yii::$app->session->setFlash('success', 'Задача создана.');
             return $this->redirect(['task/my']);
         }
+
+     
 
         return $this->render('create', [
             'model' => $model,

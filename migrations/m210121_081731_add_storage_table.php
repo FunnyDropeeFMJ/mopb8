@@ -14,10 +14,11 @@ class m210121_081731_add_storage_table extends Migration
     {
         $this->createTable('{{%storage}}', [
             'id' => $this->primaryKey(),
-            'name' => $this->string(),
+            'name' => $this->integer(11),
             'count' => $this->integer(10),
         ]);
         $this->alterColumn('{{%storage}}', 'id', $this->integer(11).'AUTO_INCREMENT');
+        $this->addForeignKey('fx_storage_cartrige', 'storage', ['name'], 'cartrige', ['id']);
     }
 
     /**

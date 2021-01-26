@@ -16,6 +16,8 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
+
+    
     public function init()
     {
         $this->layout='admin';
@@ -24,3 +26,4 @@ class Module extends \yii\base\Module
         // custom initialization code goes here
     }
 }
+

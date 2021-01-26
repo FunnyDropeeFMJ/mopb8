@@ -147,4 +147,5 @@ class UserController extends Controller
         $modelTask = Task::findOne($task_id);
         $modelUser->link(User::RELATION_ACCESSED_TASKS, $modelTask);
     }
+
 }

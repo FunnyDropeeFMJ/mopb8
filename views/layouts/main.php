@@ -38,12 +38,10 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'], 
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'О компании', 'url' => ['/site/about']],
-            ['label' => 'Услуги', 'url' => ['/site/contact']],
-            ['label' => 'Create Task', 'url' => ['/task/create']],
-            ['label' => 'My Tasks', 'url' => ['/task/my']],
-            ['label' => 'Shared Tasks', 'url' => ['/task/shared']],
-            ['label' => 'Accessed Tasks', 'url' => ['/task/accessed']],
+            ['label' => 'Создать запрос', 'url' => ['/task/create']],
+            ['label' => 'Мои запросы', 'url' => ['/task/my']],
+            ['label' => 'Отправленные запросы', 'url' => ['/task/shared']],
+            ['label' => 'Принятые', 'url' => ['/task/accessed']],
             Yii::$app->user->isGuest ? 
                 ['label' => 'Вход', 'url' => ['/site/login']] :
                 [
