@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Storage;
-use app\models\Cartrige;
 /* @var $this yii\web\View */
 /* @var $model app\models\task */
 /* @var $form yii\widgets\ActiveForm */
@@ -16,12 +15,12 @@ use app\models\Cartrige;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_name')
+     <?= $form->field($model, 'id_name')
     ->dropDownList(ArrayHelper::map(Storage::find()->all(), 'id', 'name')
     )
     ?> 
-    
-  
+
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

@@ -18,7 +18,7 @@ class m210121_081731_add_storage_table extends Migration
             'count' => $this->integer(10),
         ]);
         $this->alterColumn('{{%storage}}', 'id', $this->integer(11).'AUTO_INCREMENT');
-        $this->addForeignKey('fx_storage_cartrige', 'storage', ['name'], 'cartrige', ['id']);
+        // $this->addForeignKey('fx_storage_cartrige', 'storage', ['name'], 'cartrige', ['id']);
     }
 
     /**
