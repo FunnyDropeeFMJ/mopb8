@@ -4,12 +4,12 @@ namespace app\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\storage;
+use app\models\Storage;
 
 /**
- * StorageSearch represents the model behind the search form of `app\models\storage`.
+ * StorageSearch represents the model behind the search form of `app\models\Storage`.
  */
-class StorageSearch extends storage
+class StorageSearch extends Storage
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,7 @@ class StorageSearch extends storage
     public function rules()
     {
         return [
-            [['id', 'count'], 'integer'],
-            [['name'], 'safe'],
+            [['id', 'name', 'count'], 'integer'],
         ];
     }
 
@@ -40,7 +39,7 @@ class StorageSearch extends storage
      */
     public function search($params)
     {
-        $query = storage::find();
+        $query = Storage::find();
 
         // add conditions that should always apply here
 
@@ -59,10 +58,9 @@ class StorageSearch extends storage
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'name' => $this->name,
             'count' => $this->count,
         ]);
-
-        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

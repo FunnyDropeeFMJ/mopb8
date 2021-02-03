@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\storage */
+/* @var $model app\models\Storage */
 
 $this->title = 'Create Storage';
 $this->params['breadcrumbs'][] = ['label' => 'Storages', 'url' => ['index']];

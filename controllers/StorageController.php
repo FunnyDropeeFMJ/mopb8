@@ -3,14 +3,14 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\storage;
+use app\models\Storage;
 use app\models\search\StorageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * StorageController implements the CRUD actions for storage model.
+ * StorageController implements the CRUD actions for Storage model.
  */
 class StorageController extends Controller
 {
@@ -30,7 +30,7 @@ class StorageController extends Controller
     }
 
     /**
-     * Lists all storage models.
+     * Lists all Storage models.
      * @return mixed
      */
     public function actionIndex()
@@ -38,14 +38,14 @@ class StorageController extends Controller
         $searchModel = new StorageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [ 
+        return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single storage model.
+     * Displays a single Storage model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class StorageController extends Controller
     }
 
     /**
-     * Creates a new storage model.
+     * Creates a new Storage model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new storage();
+        $model = new Storage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class StorageController extends Controller
     }
 
     /**
-     * Updates an existing storage model.
+     * Updates an existing Storage model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class StorageController extends Controller
     }
 
     /**
-     * Deletes an existing storage model.
+     * Deletes an existing Storage model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -109,18 +109,16 @@ class StorageController extends Controller
         return $this->redirect(['index']);
     }
 
-   
-
     /**
-     * Finds the storage model based on its primary key value.
+     * Finds the Storage model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return storage the loaded model
+     * @return Storage the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = storage::findOne($id)) !== null) {
+        if (($model = Storage::findOne($id)) !== null) {
             return $model;
         }
 
