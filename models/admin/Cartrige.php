@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\admin;
 
 use Yii;
 
@@ -8,9 +8,10 @@ use Yii;
  * This is the model class for table "cartrige".
  *
  * @property int $id
- * @property string|null $model_name
+ * @property string|null $name
  *
  * @property Compatbl[] $compatbls
+ * @property Storage[] $storages
  */
 class Cartrige extends \yii\db\ActiveRecord
 {
@@ -28,7 +29,7 @@ class Cartrige extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['model_name'], 'string', 'max' => 50],
+            [['name'], 'string', 'max' => 20],
         ];
     }
 
@@ -39,7 +40,7 @@ class Cartrige extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'model_name' => 'Model Name',
+            'name' => 'Name',
         ];
     }
 
@@ -50,6 +51,16 @@ class Cartrige extends \yii\db\ActiveRecord
      */
     public function getCompatbls()
     {
-        return $this->hasMany(Compatbl::className(), ['model_cart' => 'model_name']);
+        return $this->hasMany(Compatbl::className(), ['model_cart' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Storages]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStorages()
+    {
+        return $this->hasMany(Storage::className(), ['name' => 'id']);
     }
 }

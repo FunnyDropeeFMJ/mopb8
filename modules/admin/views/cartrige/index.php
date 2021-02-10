@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\search\CartrigeSearch */
+/* @var $searchModel app\modules\admin\controllers\CartrigeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cartriges';
+$this->title = 'Картридж';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cartrige-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Cartrige', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить запись', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,13 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'model_name',
+     
+            'name',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 
-<?= var_dump($model); ?>
 
 </div>

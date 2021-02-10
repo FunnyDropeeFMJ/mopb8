@@ -13,7 +13,7 @@ class m201102_213255_create_depart_table extends Migration
     public function safeUp()
     {
         $this->createTable('{{%depart}}', [
-            'id' => $this->string(),
+            'id' => $this->primaryKey(),
             'id_name_depart' => $this->string(50),
         ]);
     $this->createIndex('idx-id', '{{%depart}}', 'id');  
