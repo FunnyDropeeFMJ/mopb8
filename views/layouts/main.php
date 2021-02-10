@@ -37,7 +37,6 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'], 
         'items' => [
-            ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Создать запрос', 'url' => ['/task/create']],
             ['label' => 'Мои запросы', 'url' => ['/task/my']],
             ['label' => 'Отправленные запросы', 'url' => ['/task/shared']],

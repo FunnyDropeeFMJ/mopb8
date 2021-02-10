@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\admin\controllers\StorageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Storages';
+$this->title = 'Склад';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="storage-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Storage', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить запись', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+   
             'name',
             'count',
 

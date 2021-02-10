@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\admin\storage */
 
-$this->title = 'Create Storage';
-$this->params['breadcrumbs'][] = ['label' => 'Storages', 'url' => ['index']];
+$this->title = 'Добавить запись';
+$this->params['breadcrumbs'][] = ['label' => 'Склад', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="storage-create">

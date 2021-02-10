@@ -41,8 +41,8 @@ class Storage extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'count' => 'Count',
+            'name' => 'Название товара',
+            'count' => 'Количество',
         ];
     }
 

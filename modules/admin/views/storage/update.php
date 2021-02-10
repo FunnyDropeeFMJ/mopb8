@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\admin\storage */
 
-$this->title = 'Update Storage: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Storages', 'url' => ['index']];
+$this->title = 'Обновить запись: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Склад', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="storage-update">
 

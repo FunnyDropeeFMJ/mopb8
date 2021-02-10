@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'password')->passwordInput() ?>
     
 
-    <?= $form->field($model, 'access_token')->checkbox() ?>
+    <!-- <?= $form->field($model, 'access_token')->checkbox() ?> -->
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

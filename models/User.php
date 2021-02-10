@@ -78,7 +78,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'name'], 'required'],
+            [['username', 'name'], 'required','message' => '{attribute} - Не может быть пустым полем.'],
             [['creator_id', 'updater_id', 'created_at', 'updated_at'], 'integer'],
             [['username', 'name', 'password', 'access_token', 'auth_key'], 'string', 'max' => 255],
         ];
@@ -91,14 +91,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return [
             'id' => 'ID',
-            'username' => 'Username',
-            'name' => 'Name',
+            'username' => 'Логин',
+            'name' => 'ФИО',
             'password_hash' => 'Password Hash',
             'access_token' => 'Access Token',
             'auth_key' => 'Auth Key',
             'creator_id' => 'Creator ID',
             'updater_id' => 'Updater ID',
-            'created_at' => 'Created At',
+            'created_at' => 'Дата создания',
             'updated_at' => 'Updated At',
         ];
     }
