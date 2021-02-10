@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\task */
+/* @var $model app\models\admin\printer */
 
-$this->title = 'Создать запрос';
-$this->params['breadcrumbs'][] = ['label' => 'Запрос', 'url' => ['index']];
+$this->title = 'Добавить принтер';
+$this->params['breadcrumbs'][] = ['label' => 'Принтер', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="task-create">
+<div class="printer-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

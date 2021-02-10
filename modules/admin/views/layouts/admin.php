@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Администратор',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -38,7 +38,9 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'User', 'url' => ['/user']],
+            ['label' => 'Склад', 'url' => ['/user']],
+            ['label' => 'Справочник НСИ', 'url' => ['default/nsi']],
+            ['label' => 'Все запросы', 'url' => ['/user']],
             // ['label' => 'About', 'url' => ['/admin/about']],
             // ['label' => 'Contact', 'url' => ['/admin/contact']],
             Yii::$app->user->isGuest ? (

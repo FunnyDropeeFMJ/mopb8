@@ -33,4 +33,9 @@ class DefaultController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionNsi()
+    {
+        return $this->render('nsi');
+    }
 }
