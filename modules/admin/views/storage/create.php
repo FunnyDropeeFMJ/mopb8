@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\admin\Depart */
+/* @var $model app\models\admin\storage */
 
-$this->title = 'Добавить запись';
-$this->params['breadcrumbs'][] = ['label' => 'Отделение', 'url' => ['index']];
+$this->title = 'Create Storage';
+$this->params['breadcrumbs'][] = ['label' => 'Storages', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="depart-create">
+<div class="storage-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

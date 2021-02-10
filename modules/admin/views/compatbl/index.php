@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\admin\controllers\CompatblSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Compatbls';
+$this->title = 'Совместимость';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="compatbl-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Compatbl', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Совместить картридж с принтером', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
