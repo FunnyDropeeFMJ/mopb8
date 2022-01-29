@@ -38,7 +38,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Пользователи', 'url' => ['/userаф']],
+            ['label' => 'Пользователи', 'url' => ['/user']],
             ['label' => 'Склад', 'url' => ['../admin/storage']],
             ['label' => 'Справочник НСИ', 'url' => ['default/nsi']],
             ['label' => 'Все запросы', 'url' => ['/user']],
